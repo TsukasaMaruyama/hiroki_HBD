@@ -1,0 +1,179 @@
+<html lang="ja"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+    <meta charset="utf-8">    <meta name="google-site-verification" content="AD6C_I-u_IpdT7-l1nRqU1mo-JcGVY2Q_JDPLrOsjI4">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>メッセージ確認ページ | TANP [タンプ]</title>
+    <meta name="description" content="大切な日にぴったりな「ギフト」に出会えるネット通販サイト。誕生日、記念日などさまざまなシーンに合わせたギフトをご用意してます。">                    <meta name="robots" content="noindex">
+        <meta property="og:title" content="メッセージ確認ページ | TANP [タンプ]">
+    <meta property="og:type" content="article">
+        <meta property="og:image" content="https://s3-ap-northeast-1.amazonaws.com/gracia.tanp/banners/TANP-ogp-min.jpg">
+    <meta property="og:site_name" content="Tanp [タンプ]">
+            <meta property="og:description" content="大切な日にぴったりな「ギフト」に出会えるネット通販サイト。誕生日、記念日などさまざまなシーンに合わせたギフトをご用意してます。">
+        <link rel="apple-touch-icon" href="/favicon.ico">
+    <meta property="fb:app_id" content="130413917573250">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="p:domain_verify" content="b66815b7fca76d124c9854d862c15848">
+
+    
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
+    <script src="my_layout.js"></script></head>
+
+<body ontouchstart="">
+
+        <div class="headerWrapper">
+        <header class="header" style="position: fixed; top: 0px; width: 100%;">
+            <div class="header__inner js-headerInner">
+                <div class="headerLogo">
+                    <style>
+                        .headerLogo {
+                            font-size: 20px;
+                            text-align: center;
+                            font-weight: bold;
+                            width: 100%!important;
+                        }
+                    </style>
+                    <a href="/">🍰HBD! HIROKI!🎉</a>
+                </div>
+            </div>
+        </header>
+    </div>
+<script type="text/javascript">
+    $(function(){
+        let scrollpos;
+        $('.js-headerNavOpenBtn').click(function() {
+            scrollpos = $(window).scrollTop();
+            $('body').addClass('fixed').css({'top': -scrollpos});
+            $('.js-headerInner').addClass('drawerNavOpen');
+        });
+        $('.js-headerNavCloseBtn').click(function() {
+            $('body').removeClass('fixed').css({'top': 0});
+            $('.js-headerInner').removeClass('drawerNavOpen');
+            window.scrollTo(0, scrollpos);
+        });
+    });
+    $('.js-searchSubmitBtn').click(function() {
+        $('form[name="searchesForm"]').submit();
+    });
+    $('.js-showAcordionContent').click(function() {
+        if ($(this).is(':checked')) {
+            $(this).siblings('.js-acordionContent').removeClass('hidden');
+        } else {
+            $(this).siblings('.js-acordionContent').addClass('hidden');
+        }
+    });
+    $(function(){
+        let scrollpos;
+        $('.js-showSearchFormBtn').click(function() {
+            scrollpos = $(window).scrollTop();
+            $('body').addClass('fixed').css({'top': -scrollpos});
+            $('.js-headerInner').addClass('drawerSearchOpen');
+        });
+        $('.js-hideSearchFormBtn').click(function() {
+            $('body').removeClass('fixed').css({'top': 0});
+            $('.js-headerInner').removeClass('drawerSearchOpen');
+            window.scrollTo(0, scrollpos);
+        });
+    });
+    let navOffset = $('.header').offset().top;
+    $(window).scroll(function(){
+        if ($(this).scrollTop() >= navOffset) {
+            $('.header').css({
+                'position': 'fixed',
+                'top': 0,
+                'width': '100%'
+            });
+        } else {
+            $('.header').css({'position':'relative'});
+        }
+    });
+</script>
+<main role="main">
+            <div class="message-container">
+    <div class="message-card">
+        <div class="message-front">
+            <div class="message-image-container">
+                <div class="message-image">
+                <video style="width: 100%" src="matuda.mp4" controls></video>
+                </div>
+            </div>
+            <div class="message-content">
+                <div class="message-content-inner" style="background-image: url('https://s3-ap-northeast-1.amazonaws.com/gracia.tamp/message/message-sample2+.png');">
+                    <p class="message-to">先生へ</p>
+                    <p class="message-body">誕生日おめでとう</p>
+                    <p class="message-from">エンジニア</p>
+                </div>
+            </div>
+        </div>
+        <div class="message-back"><img src="https://s3-ap-northeast-1.amazonaws.com/gracia.tamp/message/message-front-fixed.png"></div>
+    </div>
+</div>
+
+
+<script>
+    (function($){
+        $.fn.rotate_box = function(){
+            var	elm = $(this),
+                elm_in = $('.message-card', this),
+                btn = $('.message-front, .message-back', elm),
+                deg = 0,
+                turn = false,
+                turn_cls = 'reverse';
+
+            var rotate_anm = function(){
+                elm_in.css({
+                    'transform' : 'rotateY(' + deg * -2 + 'deg)'
+                });
+            };
+
+            var rotate = function(){
+                setTimeout(function(){
+                    rotate_anm();
+                    if( deg == 45 ){
+                        elm.addClass(turn_cls);
+                        deg = 315;
+                    }
+                    if( deg <= 45 ){
+                        deg += 3;
+                        rotate();
+                    } else if( deg < 360 && deg > 45 ) {
+                        deg += 3;
+                        rotate();
+                    } else {
+                        deg = 0;
+                        elm_in.attr('style', '');
+                        turn = true;
+                    }
+                }, 15);
+            };
+
+            btn.click(function(){
+                if (!turn) {
+                    rotate();
+                }
+            });
+        };
+    })(jQuery);
+
+    $('.message-container').rotate_box();
+</script></main>
+<script>
+    $('.js-footerMenuItemWrapper').hide();
+    $('.js-sideUpDownTrigger').click(function () {
+        $(this).closest('.footerMenu').find('.js-footerMenuItemWrapper').slideToggle(200);
+        $(this).toggleClass('footerMenu__title--active');
+    });
+</script>
+
+<script>
+    !function(t,e){"object"==typeof exports?module.exports=e(t):"function"==typeof define&&define.amd?define([],e(t)):t.LazyLoad=e(t)}("undefined"!=typeof global?global:this.window||this.global,function(t){"use strict";function e(t,e){this.settings=r(s,e||{}),this.images=t||document.querySelectorAll(this.settings.selector),this.observer=null,this.init()}const s={src:"data-src",srcset:"data-srcset",selector:".lazyload"},r=function(){let t={},e=!1,s=0,o=arguments.length;"[object Boolean]"===Object.prototype.toString.call(arguments[0])&&(e=arguments[0],s++);for(;s<o;s++)!function(s){for(let o in s)Object.prototype.hasOwnProperty.call(s,o)&&(e&&"[object Object]"===Object.prototype.toString.call(s[o])?t[o]=r(!0,t[o],s[o]):t[o]=s[o])}(arguments[s]);return t};if(e.prototype={init:function(){if(!t.IntersectionObserver)return void this.loadImages();let e=this,s={root:null,rootMargin:"0px",threshold:[0]};this.observer=new IntersectionObserver(function(t){t.forEach(function(t){if(t.intersectionRatio>0){e.observer.unobserve(t.target);let s=t.target.getAttribute(e.settings.src),r=t.target.getAttribute(e.settings.srcset);"img"===t.target.tagName.toLowerCase()?(s&&(t.target.src=s),r&&(t.target.srcset=r)):t.target.style.backgroundImage="url("+s+")"}})},s),this.images.forEach(function(t){e.observer.observe(t)})},loadAndDestroy:function(){this.settings&&(this.loadImages(),this.destroy())},loadImages:function(){if(!this.settings)return;let t=this;this.images.forEach(function(e){let s=e.getAttribute(t.settings.src),r=e.getAttribute(t.settings.srcset);"img"===e.tagName.toLowerCase()?(s&&(e.src=s),r&&(e.srcset=r)):e.style.backgroundImage="url("+s+")"})},destroy:function(){this.settings&&(this.observer.disconnect(),this.settings=null)}},t.lazyload=function(t,s){return new e(t,s)},t.jQuery){const s=t.jQuery;s.fn.lazyload=function(t){return t=t||{},t.attribute=t.attribute||"data-src",new e(s.makeArray(this),t),this}}return e});
+    $(function() {
+        $('img[data-src]').lazyload({
+            threshold: 100
+        });
+    });
+</script>
+
+
+<script id="__debug_kit" data-id="d981608d-dd98-4184-92b0-8addb289b9ee" data-url="http://192.168.33.13:8001/" src="/debug_kit/js/toolbar.js?1547442821"></script>
+<div class="cs-canvas-container" style="display: none; position: absolute; z-index: 99999; width: 100%; height: 100%; top: 497px; left: 0px;"><canvas id="cs-particle-canvas" style="display: none;"></canvas></div><iframe height="40" width="100%" src="http://192.168.33.13:8001/debug-kit/toolbar/d981608d-dd98-4184-92b0-8addb289b9ee" style="position: fixed; bottom: 0px; right: 0px; border: 0px; outline: 0px; overflow: hidden; z-index: 99999;"></iframe></body></html>
